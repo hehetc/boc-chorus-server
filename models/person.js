@@ -8,7 +8,7 @@ module.exports = {
      * @param user
      */
     create: function create(user,callback) {
-        var sql = 'INSERT INTO T_user(F_ID,F_Name,F_PhotoUrl)VALUES(0,?,?)';
+        var sql = 'INSERT INTO t_user(F_ID,F_Name,F_PhotoUrl)VALUES(0,?,?)';
         var params = [user.username, user.avatarUrl];
         db.connection.query(sql,params,function (err,result) {
             if(err){
@@ -27,7 +27,7 @@ module.exports = {
        @return  result整个用户对象
      */
     getUserByName: function getUserByName(name,callback) {
-        var sql = 'SELECT * FROM T_user WHERE F_Name=?';
+        var sql = 'SELECT * FROM t_user WHERE F_Name=?';
         var params = [name];
         db.connection.query(sql,params,function (err,result) {
            if(err){
@@ -43,7 +43,7 @@ module.exports = {
      * @param name
      */
     updateUserById: function updateUserByName(user_id,avatar_url,callback) {
-        var sql = 'UPDATE T_user SET F_PhotoUrl = ? WHERE F_ID = ?';
+        var sql = 'UPDATE t_user SET F_PhotoUrl = ? WHERE F_ID = ?';
         var params = [avatar_url,user_id];
         db.connection.query(sql,params,function (err,result) {
             if(err){

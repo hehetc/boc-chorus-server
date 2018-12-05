@@ -1,7 +1,7 @@
 var db = require('../utils/dbConnection');
 module.exports = {
     create: function create (a,callback) {
-        var sql = 'INSERT INTO T_activity(F_ID,F_CreaterId,F_Caption,F_Desc,F_Location,F_Lat,F_Lng,F_StartDate' +
+        var sql = 'INSERT INTO t_activity(F_ID,F_CreaterId,F_Caption,F_Desc,F_Location,F_Lat,F_Lng,F_StartDate' +
             ',F_EndDate,F_IfFace,F_IfPhoto,F_IfLocation)' +
             ' VALUES(0,?,?,?,?,?,?,?,?,?,?,?)';
         var params=[a.F_CreaterId,a.F_Caption,a.F_Desc,a.F_Location,a.F_Lat,a.F_Lng,a.F_StartDate,a.F_EndDate
@@ -31,7 +31,7 @@ module.exports = {
     },
     
     getallLike:function (str,callback) {
-        var sql = 'SELECT * FROM T_activity WHERE F_Caption LIKE ? ';
+        var sql = 'SELECT * FROM t_activity WHERE F_Caption LIKE ? ';
         str = '%' + str + '%';
         var params = [str];
         db.connection.query(sql,params,function (err,res) {
