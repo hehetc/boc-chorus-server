@@ -73,8 +73,8 @@ router.post('/getall',function (req,res,next) {
             console.log("现在的时间：")
             console.log(now);
             console.log("差异：");
-            console.log(activitys[i].F_EndDate).diff(now));
-    
+            console.log((activitys[i].F_EndDate).diff(now));
+
             if(moment(activitys[i].F_EndDate).diff(now)<0){
                 completed.push(activitys[i]);
             }else {
