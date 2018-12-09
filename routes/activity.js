@@ -68,7 +68,13 @@ router.post('/getall',function (req,res,next) {
         for(var i = 0; i < activitys.length; i ++){
             activitys[i].F_EndDate = moment(activitys[i].F_EndDate).format('YYYY-MM-DD');
             //<0说明在endDate在现在之前---已经结束了
+            console.log("活动的时间：");
             console.log(moment(activitys[i].F_EndDate));
+            console.log("现在的时间：")
+            console.log(now);
+            console.log("差异：");
+            console.log(activitys[i].F_EndDate).diff(now));
+    
             if(moment(activitys[i].F_EndDate).diff(now)<0){
                 completed.push(activitys[i]);
             }else {
