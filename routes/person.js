@@ -85,6 +85,24 @@ router.post('/update',function (req, res) {
 
 });
 
+/**
+ * 用于补充个人信息-真实姓名、手机号
+ */
+router.post('/addUserInfo',function (req, res) {
+    console.log("【routes-person】进入/addUserInfo");
+    var user_id = req.body.user_id;
+    var realname = req.body.realname;
+    var mobile = req.body.mobile;
+    var result = {
+        code: 1
+    };
+    users.updateUserInfoById(user_id,realname,mobile,function (update_res) {
+        console.log(update_res);
+        res.send(result);
+    })
+
+});
+
 
 
 module.exports = router;

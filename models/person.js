@@ -42,10 +42,13 @@ module.exports = {
      * 传入用户名,并将用户的信息更新
      * @param name
      */
-    updateUserById: function updateUserByName(user_id,avatar_url,callback) {
-        var sql = 'UPDATE t_user SET F_PhotoUrl = ? WHERE F_ID = ?';
-        var params = [avatar_url,user_id];
+    updateUserInfoById: function updateUserInfoById(user_id,realname,mobile,callback) {
+        console.log("【model-person.js-updateUserInfoById】收到的参数");
+        console.log(realname,mobile);
+        var sql = 'UPDATE t_user SET F_Realname = ?, F_Mobile = ?  WHERE F_ID = ?';
+        var params = [realname, mobile, user_id];
         db.connection.query(sql,params,function (err,result) {
+            console.log("asf");     
             if(err){
                 console.log(err.message);
                 return;

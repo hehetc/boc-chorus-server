@@ -7,8 +7,8 @@
 6 silly lifecycle checkin@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle checkin@0.0.0~start: checkin@0.0.0
 8 verbose lifecycle checkin@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle checkin@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/YinChong/Desktop/boc-chorus-server/checkin/node_modules/.bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin:%JAVA_HOME%jrebin:/Users/YinChong/Documents/software/apache-maven-3.5.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/local/go/bin:.
-10 verbose lifecycle checkin@0.0.0~start: CWD: /Users/YinChong/Desktop/boc-chorus-server/checkin
+9 verbose lifecycle checkin@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/YinChong/Desktop/boc-chorus-server/node_modules/.bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin:%JAVA_HOME%jrebin:/Users/YinChong/Documents/software/apache-maven-3.5.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/local/go/bin:.
+10 verbose lifecycle checkin@0.0.0~start: CWD: /Users/YinChong/Desktop/boc-chorus-server
 11 silly lifecycle checkin@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle checkin@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle checkin@0.0.0~start: Failed to exec start script
@@ -23,7 +23,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid checkin@0.0.0
-16 verbose cwd /Users/YinChong/Desktop/boc-chorus-server/checkin
+16 verbose cwd /Users/YinChong/Desktop/boc-chorus-server
 17 error Darwin 17.4.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.11.3

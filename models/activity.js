@@ -18,7 +18,7 @@ module.exports = {
         });
     },
 
-    getall: function (user_id,callback) {
+    getall_applied: function (user_id,callback) {
         var sql = 'SELECT * FROM v_apply_activity WHERE F_ApplyerId=? ';
         var params = [user_id];
         db.connection.query(sql,params,function (err,res) {
@@ -30,6 +30,17 @@ module.exports = {
         })
     },
     
+    getall: function (user_id,callback) {
+        var sql = 'SELECT * FROM t_activity';
+        db.connection.query(sql,function (err,res) {
+            if(err){
+                console.log(err);
+                return;
+            }
+            callback(res);
+        })
+    },
+
     getallLike:function (str,callback) {
         var sql = 'SELECT * FROM t_activity WHERE F_Caption LIKE ? ';
         str = '%' + str + '%';

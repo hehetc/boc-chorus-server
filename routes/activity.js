@@ -62,20 +62,16 @@ router.post('/create', function (req, res, next) {
 router.post('/getall',function (req,res,next) {
     var user_id = req.body.userId;
     var now = moment();
+    // console.log(now);
+    // console.log(moment().add(1, 'day')); // 下一天
     var completed = [];
     var processing = [];
     activity.getall(user_id,function (activitys) {
         for(var i = 0; i < activitys.length; i ++){
             activitys[i].F_EndDate = moment(activitys[i].F_EndDate).format('YYYY-MM-DD');
-            //<0说明在endDate在现在之前---已经结束了
-            console.log("活动的时间：");
-            console.log(moment(activitys[i].F_EndDate));
-            console.log("现在的时间：")
-            console.log(now);
-            console.log("差异：");
-            console.log(moment(activitys[i].F_EndDate).diff(now));
-
-            if(moment(activitys[i].F_EndDate).diff(now)<0){
+            //<0说明在endDate在现在之前---已经结束了.endDate是今天时，默认是0点，所以加24小时后再比
+            console.log(moment(activitys[i].F_EndDate).add(1, 'day').diff(now));
+            if(moment(activitys[i].F_EndDate).add(1, 'day').diff(now)<0){
                 completed.push(activitys[i]);
             }else {
                 processing.push(activitys[i]);
