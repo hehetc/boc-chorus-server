@@ -11,6 +11,13 @@ router.post('/', function (req, res, next) {
     res.send(result);
 });
 
+router.get('/testGet', function (req, res, next) {
+    var result = {
+        result: "testGet returns this message"
+    };
+    res.send(result);
+});
+
 /**
  * /activity/create
  * POST
