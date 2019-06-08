@@ -92,29 +92,29 @@ router.post('/getall',function (req,res,next) {
     })
 });
 
-router.get('/getall',function (req,res,next) {
-    var now = moment();
-    var completed = [];
-    var processing = [];
-    console.log(now);
-    activity.getall(function (activitys) {
-        for(var i = 0; i < activitys.length; i ++){
-            // activitys[i].F_StartDate = moment(activitys[i].F_StartDate).format('YYYY-MM-DD');
-            activitys[i].F_EndDate = moment(activitys[i].F_EndDate).format('YYYY-MM-DD');
-            //<0说明在endDate在现在之前---已经结束了
-            if(moment(activitys[i].F_EndDate).diff(now)<=0){
-                completed.push(activitys[i]);
-            }else {
-                processing.push(activitys[i]);
-            }
-        }
-        var res_getall = {
-            'completed':completed,
-            'processing':processing
-        };
-        res.send(res_getall);
-    });
-});
+// router.get('/getall',function (req,res,next) {
+//     var now = moment();
+//     var completed = [];
+//     var processing = [];
+//     console.log(now);
+//     activity.getall(function (activitys) {
+//         for(var i = 0; i < activitys.length; i ++){
+//             // activitys[i].F_StartDate = moment(activitys[i].F_StartDate).format('YYYY-MM-DD');
+//             activitys[i].F_EndDate = moment(activitys[i].F_EndDate).format('YYYY-MM-DD');
+//             //<0说明在endDate在现在之前---已经结束了
+//             if(moment(activitys[i].F_EndDate).diff(now)<=0){
+//                 completed.push(activitys[i]);
+//             }else {
+//                 processing.push(activitys[i]);
+//             }
+//         }
+//         var res_getall = {
+//             'completed':completed,
+//             'processing':processing
+//         };
+//         res.send(res_getall);
+//     });
+// });
 /**
  * 模糊查询所有的活动
  */
