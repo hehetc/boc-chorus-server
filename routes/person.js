@@ -58,12 +58,16 @@ router.post('/',function (req, res) {
             console.log("【routes-person.js-getUserByName】库里找到了该用户：");
             userId = userInfos[0].F_ID;
             avatarUrl = userInfos[0].F_PhotoUrl;
+            realname = userInfos[0].F_Realname;
+            mobile = userInfos[0].F_Mobile;
             var result = {
                 userId: userId,
-                avatarUrl: avatarUrl
+                avatarUrl: avatarUrl,
+                realname: realname,
+                mobile: mobile
             };
             console.log(result);
-            res.send(result); //已存在用户，返回用户userId和avatarUrl
+            res.send(result); //已存在用户，返回用户userId和avatarUrl(还有realname和mobile，若已经补充了个人信息的话)
         }
 
     });
